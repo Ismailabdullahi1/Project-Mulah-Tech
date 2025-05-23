@@ -2,7 +2,14 @@
 // Description: This script is part of a web application that displays and processes data in a table format.    
 // It includes functions to manipulate the DOM, calculate values based on the data, and toggle between two tables.
 
+// Function to toggle the visibility of the contact menu
+  function toggleMenu() {
+    const menu = document.getElementById("contactMenu");
+    menu.classList.toggle("active");
+  }
 
+
+  // table1-card
 const table1Body = document.getElementById("table1-body");
 const alpha = document.getElementById("alpha-value");
 const beta = document.getElementById("beta-value");

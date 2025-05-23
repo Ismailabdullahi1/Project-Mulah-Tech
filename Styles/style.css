@@ -17,15 +17,20 @@ body {
 }
 
 /* Header Bar */
+
 .header-bar {
   background: linear-gradient(135deg, #0ea5e9, #6366f1);
   padding: 20px;
   color: white;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   animation: fadeIn 1.2s ease-in;
-  text-align: center;
+}
+
+.header-content {
+  text-align: left;
 }
 
 .logo {
@@ -52,21 +57,26 @@ body {
   margin-top: 6px;
 }
 
-/* Contact Icons */
+/* Menu toggle (hamburger) */
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* Contact icons base */
 .contact-icons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin-top: 15px;
+  gap: 20px;
+  transition: all 0.3s ease;
 }
 
 .contact-icon {
   color: white;
   font-size: 1.1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -77,9 +87,48 @@ body {
   transform: translateY(-4px);
 }
 
-.contact-icon i {
-  transition: color 0.3s ease;
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .contact-icons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 998;
+  }
+
+  .contact-icons.active {
+    display: flex;
+  }
 }
+
+/* Large screen override */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Center the contact icons in the header */
+  .contact-icons {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    position: static;
+    background: none;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 /* Welcome Section */
 .welcome-section {
