@@ -1,4 +1,4 @@
-# 🌐 Internship Task — Web Profile Page  
+# 🌐 Internship Task — Web Page  
 > Internship Assignment for Software Position at **Mulah Technologies Sdn Bhd**
 
 ---
